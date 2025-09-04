@@ -171,6 +171,7 @@ def worker(idx, args, job_q: queue.Queue, metrics: Metrics, start_ts, end_ts):
             total = metrics.success + metrics.fail
             sys.stdout.write(
                 f"\r{Fore.YELLOW}🚀 Threads {args.threads} | Sent {total} | 2xx/3xx/4xx/5xx: "
+                print(f"\r{Fore.MAGENTA}Kunfay  {Fore.CYAN}Dark-Attack")
                 f"{sum(v for k,v in metrics.codes.items() if 200<=k<300)}/"
                 f"{sum(v for k,v in metrics.codes.items() if 300<=k<400)}/"
                 f"{sum(v for k,v in metrics.codes.items() if 400<=k<500)}/"
